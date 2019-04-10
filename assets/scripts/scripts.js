@@ -13,7 +13,7 @@ $(document).ready(function () {
     }).then(function (response) {
 
       let results = response.data;
-      // console.log(results);
+      
       for (let i = 0; i < results.length; i++) {
 
         let $gifDiv = $("<div class='col-md-5'>");
@@ -22,7 +22,8 @@ $(document).ready(function () {
         let staticGif = results[i].images.fixed_height_still.url;
         let $gif = $("<img>");
         let $p = $("<p>").text("Rating: " + $gifRating);
-
+  
+//       TODO:  should edit to pass as obj instead of multi line
         $gif.attr("src", staticGif);
         $gif.addClass("gif");
         $gif.attr("data-state", "still");
@@ -40,7 +41,7 @@ $(document).ready(function () {
 
     event.preventDefault();
     let newSearch = $("#searchInput").val().trim();
-    console.log(newSearch);
+//     console.log(newSearch);
     btnArray.push(newSearch);
     $("#searchInput").val('');
     displayButtons();
